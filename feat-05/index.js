@@ -11,7 +11,5 @@ export default function main() {
 
   const promisifyTest = promisify(test);
 
-  promisifyTest('promisify').then((res) => {
-    console.log('hello', res);
-  });
+  promisifyTest('promisify').then((res) => console.log('hello', res));
 }

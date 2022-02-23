@@ -4,8 +4,9 @@ export default function promisify(fn) {
     if (hasCb) {
       fn(...args);
     } else {
-      return new Promise(() => {
+      return new Promise((resolve, reject) => {
         fn(...args, cb);
+
         function cb(err, data) {
           if (err) {
             reject(err);
